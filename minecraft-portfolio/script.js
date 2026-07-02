@@ -137,3 +137,66 @@ document.addEventListener('keydown', (event) => {
     closeProjectModal();
   }
 });
+
+// === Models gallery loader ===
+const modelsGallery = document.getElementById('models-gallery');
+
+function renderModels(models) {
+  if (!modelsGallery) return;
+  modelsGallery.innerHTML = '';
+  if (!models || models.length === 0) {
+    const p = document.createElement('p');
+    p.className = 'muted';
+    p.textContent = 'Nenhum modelo encontrado. Envie GIFs/imagens para minecraft-portfolio/assets/textures ou atualize models.json.';
+    modelsGallery.appendChild(p);
+    return;
+  }
+
+  const grid = document.createElement('div');
+  grid.className = 'models-grid';
+
+  models.forEach((m, i) => {
+    const card = document.createElement('button');
+    card.className = 'gallery-item pixel-btn';
+    card.type = 'button';
+    card.addEventListener('click', () => {
+      // abrir modal com detalhes
+      modalImage.src = m.src;
+      modalImage.alt = m.title || `Modelo ${i+1}`;
+      modalTitle.textContent = m.title || `Modelo ${i+1}`;
+      modalDesc.textContent = m.desc || '';
+      modalTech.innerHTML = (m.tech || []).map(t => `<span>${t}</span>`).join('');
+      modalDownload.href = m.download || m.src || '#';
+      modal.classList.remove('hidden');
+      modal.setAttribute('aria-hidden', 'false');
+    });
+
+    const img = document.createElement('img');
+    img.src = m.thumb || m.src;
+    img.alt = m.title || `Modelo ${i+1}`;
+    img.className = 'model-thumb';
+    card.appendChild(img);
+
+    const label = document.createElement('div');
+    label.className = 'model-label';
+    label.textContent = m.title || `Modelo ${i+1}`;
+    card.appendChild(label);
+
+    grid.appendChild(card);
+  });
+
+  modelsGallery.appendChild(grid);
+}
+
+function loadModelsJSON() {
+  fetch('assets/textures/models.json')
+    .then((res) => {
+      if (!res.ok) throw new Error('models.json não encontrado');
+      return res.json();
+    })
+    .then((data) => renderModels(data))
+    .catch(() => renderModels([]));
+}
+
+// carregue ao iniciar a página
+document.addEventListener('DOMContentLoaded', loadModelsJSON);
