@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minecraft Style Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="loading-screen" class="loading-screen" aria-live="polite">
+      <div class="loading-card">
+        <div class="block-stack" aria-hidden="true">
+          <span class="block block-1"></span>
+          <span class="block block-2"></span>
+          <span class="block block-3"></span>
+        </div>
+        <h2>Carregando o mundo...</h2>
+        <p>Preparando o inventário e os blocos da sua jornada.</p>
+        <div class="loading-bar"><span></span></div>
+        <button id="skip-loading" class="pixel-btn small">Entrar agora</button>
+      </div>
+    </div>
+
+    <div class="background-layer"></div>
+    <div class="overlay-grid"></div>
+
+    <main class="menu-shell">
+      <header class="main-header" id="home">
+        <img class="logo" src="assets/textures/logo.svg" alt="Logo do portfólio" />
+        <p class="subtitle">Minecraft-inspired</p>
+        <h1>Portal do Criador</h1>
+        <p class="intro">
+          Explore meu mundo de projetos, modelos, animações, mods e downloads em um inventário pixelado.
+        </p>
+      </header>
+
+      <nav class="menu-buttons" aria-label="Menu principal">
+        <button class="pixel-btn" data-target="home">Home</button>
+        <button class="pixel-btn" data-target="about">Sobre Mim</button>
+        <button class="pixel-btn" data-target="projects">Projetos</button>
+        <button class="pixel-btn" data-target="blockbench">Modelos Blockbench</button>
+        <button class="pixel-btn" data-target="animations">Animações</button>
+        <button class="pixel-btn" data-target="mods">Mods</button>
+        <button class="pixel-btn" data-target="downloads">Downloads</button>
+        <button class="pixel-btn" data-target="contact">Contato</button>
+      </nav>
+
+      <section id="about" class="panel compact">
+        <div class="panel-title">
+          <h2>Sobre Mim</h2>
+          <span>Criação e tecnologia</span>
+        </div>
+        <p>
+          Sou um criador apaixonado por Minecraft, designs pixelados, interfaces e experiências imersivas. Meu objetivo é transformar ideias em conteúdo visual, funcional e divertido.
+        </p>
+      </section>
+
+      <section id="projects" class="panel">
+        <div class="panel-title">
+          <h2>Inventário de Projetos</h2>
+          <span>Selecione um item</span>
+        </div>
+
+        <div class="inventory-grid">
+          <button class="inventory-slot active" data-project="0">
+            <span class="slot-icon">⛏️</span>
+            <span>Crafts</span>
+          </button>
+          <button class="inventory-slot" data-project="1">
+            <span class="slot-icon">🎬</span>
+            <span>Animações</span>
+          </button>
+          <button class="inventory-slot" data-project="2">
+            <span class="slot-icon">⚙️</span>
+            <span>Mods</span>
+          </button>
+          <button class="inventory-slot" data-project="3">
+            <span class="slot-icon">⬇️</span>
+            <span>Downloads</span>
+          </button>
+        </div>
+
+        <div class="project-card" id="project-details">
+          <h3 id="project-title">Projeto 01 - Crafts</h3>
+          <p id="project-desc">
+            Modelos e assets criados com foco em estética, organização e identidade visual.
+          </p>
+          <div class="tech-list" id="project-tech">
+            <span>Blockbench</span><span>Blender</span><span>Pixel Art</span>
+          </div>
+          <div class="project-actions">
+            <button class="pixel-btn small open-project">Abrir detalhes</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="blockbench" class="panel compact">
+        <div class="panel-title">
+          <h2>Modelos Blockbench</h2>
+          <span>Itens e personagens</span>
+        </div>
+        <p>
+          Aqui ficam os modelos criados no Blockbench, com foco em itens, mobs e objetos do universo Minecraft.
+        </p>
+      </section>
+
+      <section id="animations" class="panel compact">
+        <div class="panel-title">
+          <h2>Animações</h2>
+          <span>Movimentos e efeitos</span>
+        </div>
+        <p>
+          Sequências animadas para dar vida a modelos, mobs e elementos de interface com uma estética mais dinâmica.
+        </p>
+      </section>
+
+      <section id="mods" class="panel compact">
+        <div class="panel-title">
+          <h2>Mods</h2>
+          <span>Conteúdos personalizados</span>
+        </div>
+        <p>
+          Modificações criadas para expandir gameplay, estética e experiência dentro do universo do jogo.
+        </p>
+      </section>
+
+      <section id="downloads" class="panel compact">
+        <div class="panel-title">
+          <h2>Downloads</h2>
+          <span>Arquivos prontos</span>
+        </div>
+        <p>
+          Baixe versões, recursos e arquivos de apoio diretamente de cada projeto destacado no inventário.
+        </p>
+      </section>
+
+      <section id="contact" class="panel compact">
+        <div class="panel-title">
+          <h2>Contato</h2>
+          <span>Pronto para construir</span>
+        </div>
+        <p>
+          Entre em contato para colaborar em modelos, mods, animações e projetos interativos.
+        </p>
+      </section>
+    </main>
+
+    <div id="project-modal" class="modal hidden" aria-hidden="true">
+      <div class="modal-card">
+        <button id="close-modal" class="modal-close" aria-label="Fechar">×</button>
+        <div class="modal-content">
+          <img id="modal-image" src="assets/textures/project-craft.svg" alt="Imagem do projeto" />
+          <div>
+            <h3 id="modal-title">Projeto</h3>
+            <p id="modal-desc"></p>
+            <div id="modal-tech" class="tech-list"></div>
+            <div class="project-actions">
+              <a id="modal-download" class="pixel-btn small" href="#" download>Baixar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

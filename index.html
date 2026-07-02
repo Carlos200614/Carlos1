@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portfólio no estilo Minecraft com inventário, animações e galeria de projetos." />
+    <title>Portal do Criador | Portfólio Minecraft</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="loading-screen" class="loading-screen" aria-live="polite">
+      <div class="loading-card">
+        <div class="block-stack" aria-hidden="true">
+          <span class="block block-1"></span>
+          <span class="block block-2"></span>
+          <span class="block block-3"></span>
+        </div>
+        <h2>Carregando o mundo...</h2>
+        <p>Preparando o inventário, as animações e os blocos da sua jornada.</p>
+        <div class="loading-bar"><span></span></div>
+        <button id="skip-loading" class="pixel-btn small">Entrar agora</button>
+      </div>
+    </div>
+
+    <div class="background-layer" aria-hidden="true"></div>
+    <div class="overlay-grid" aria-hidden="true"></div>
+
+    <main class="menu-shell">
+      <header class="main-header">
+        <p class="subtitle">Minecraft-inspired</p>
+        <h1>Portal do Criador</h1>
+        <p class="intro">
+          Explore meus projetos como se fosse um inventário pixelado, com fundo animado, botões de menu e uma experiência pronta para GitHub Pages.
+        </p>
+      </header>
+
+      <nav class="menu-buttons" aria-label="Menu principal">
+        <button class="pixel-btn" data-target="inventory">Inventário</button>
+        <button class="pixel-btn" data-target="animations">Blockbench</button>
+        <button class="pixel-btn" data-target="gallery">Projetos</button>
+        <button class="pixel-btn" data-target="contact">Contato</button>
+      </nav>
+
+      <section id="inventory" class="panel">
+        <div class="panel-title">
+          <h2>Inventário de Modelos</h2>
+          <span>Selecione um slot</span>
+        </div>
+
+        <div class="inventory-layout">
+          <div class="inventory-grid">
+            <button class="inventory-slot active" data-project="0">
+              <span class="slot-icon">⛏️</span>
+              <span>MineCraft</span>
+            </button>
+            <button class="inventory-slot" data-project="1">
+              <span class="slot-icon">🧱</span>
+              <span>Blocos</span>
+            </button>
+            <button class="inventory-slot" data-project="2">
+              <span class="slot-icon">🌐</span>
+              <span>Portais</span>
+            </button>
+            <button class="inventory-slot" data-project="3">
+              <span class="slot-icon">⚔️</span>
+              <span>Combate</span>
+            </button>
+          </div>
+
+          <div class="project-card" id="project-details" data-model="0">
+            <div class="project-preview" aria-hidden="true">
+              <span class="preview-block block-a"></span>
+              <span class="preview-block block-b"></span>
+              <span class="preview-block block-c"></span>
+            </div>
+            <h3 id="project-title">Projeto 01 - MineCraft</h3>
+            <p id="project-desc">
+              Um universo de construção em pixel com foco em interfaces imersivas e interação simples.
+            </p>
+            <div class="tech-list" id="project-tech">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="animations" class="panel">
+        <div class="panel-title">
+          <h2>Animações do Blockbench</h2>
+          <span>Loop, idle e combate</span>
+        </div>
+
+        <div class="animation-grid">
+          <article class="animation-card">
+            <h3>Idle Loop</h3>
+            <p>Uma animação leve para destacar presença e identidade visual do personagem.</p>
+            <span class="badge">Loop suave</span>
+          </article>
+          <article class="animation-card">
+            <h3>Attack</h3>
+            <p>Movimento dinâmico com timing de impacto para cenas de ação ou destaque.</p>
+            <span class="badge">Impacto</span>
+          </article>
+          <article class="animation-card">
+            <h3>Walk Cycle</h3>
+            <p>Transição fluida que dá vida ao modelo em qualquer composição do portfólio.</p>
+            <span class="badge">Movimento</span>
+          </article>
+          <div class="preview-card">
+            <div class="model-preview" aria-hidden="true">
+              <span class="preview-head"></span>
+              <span class="preview-body"></span>
+              <span class="preview-arm left"></span>
+              <span class="preview-arm right"></span>
+              <span class="preview-leg left"></span>
+              <span class="preview-leg right"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery" class="panel">
+        <div class="panel-title">
+          <h2>Galeria de Projetos</h2>
+          <span>Itens especiais do inventário</span>
+        </div>
+
+        <div class="project-gallery">
+          <article class="gallery-card">
+            <h3>Portal do Criador</h3>
+            <p>Landing page com estética de menu principal e navegação por blocos.</p>
+            <div class="tech-list">
+              <span>UI</span><span>HTML</span><span>CSS</span>
+            </div>
+          </article>
+          <article class="gallery-card">
+            <h3>Modelo de Personagem</h3>
+            <p>Conjunto de peças e animações pensado para apresentar identidade visual.</p>
+            <div class="tech-list">
+              <span>Blockbench</span><span>Motion</span><span>3D</span>
+            </div>
+          </article>
+          <article class="gallery-card">
+            <h3>Projeto em Destaque</h3>
+            <p>Versão responsiva pronta para ser publicada no GitHub Pages com zero configuração extra.</p>
+            <div class="tech-list">
+              <span>GitHub Pages</span><span>Responsive</span><span>Deploy</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="panel compact">
+        <div class="panel-title">
+          <h2>Contato</h2>
+          <span>Pronto para construir</span>
+        </div>
+        <p>
+          Entre em contato para transformar ideias em experiências visuais, interativas e com o clima de um jogo moderno.
+        </p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
