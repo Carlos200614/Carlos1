@@ -1,1 +1,34 @@
-[]
+[
+	{
+		"title": "Modelo 1",
+		"src": "assets/textures/project-craft.svg",
+		"thumb": "assets/textures/project-craft.svg",
+		"desc": "Preview do item Craft",
+		"tech": ["Blockbench"],
+		"download": "assets/textures/project-craft.svg"
+	},
+	{
+		"title": "Modelo 2",
+		"src": "assets/textures/project-animations.svg",
+		"thumb": "assets/textures/project-animations.svg",
+		"desc": "Preview das animações",
+		"tech": ["Blockbench", "Animation"],
+		"download": "assets/textures/project-animations.svg"
+	},
+	{
+		"title": "Modelo 3",
+		"src": "assets/textures/project-mods.svg",
+		"thumb": "assets/textures/project-mods.svg",
+		"desc": "Preview de mods",
+		"tech": ["Mods"],
+		"download": "assets/textures/project-mods.svg"
+	},
+	{
+		"title": "Modelo 4",
+		"src": "assets/textures/project-downloads.svg",
+		"thumb": "assets/textures/project-downloads.svg",
+		"desc": "Arquivo para download",
+		"tech": ["Download"],
+		"download": "assets/textures/project-downloads.svg"
+	}
+]
